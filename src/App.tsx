@@ -15,14 +15,9 @@ function App() {
                </Link>
             </div>
          </header>
-
-         <div className="flex">
-            <main className="p-2 flex-1">
-               <div>
-                  <Outlet />
-               </div>
-            </main>
-         </div>
+         <main className="flex">
+               <Outlet />
+         </main>
       </div>
    );
 }
