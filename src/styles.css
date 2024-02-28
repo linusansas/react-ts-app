@@ -1,0 +1,9 @@
+@media (max-width: 768px) { /* Justera denna bredd enligt dina behov */
+    .flex-col {
+       flex-direction: column; /* Ändra riktning till kolumn på mindre skärmar */
+    }
+    
+    .lg:flex-row {
+       flex-direction: row; /* Återställ till rad på större skärmar */
+    }
+ }
