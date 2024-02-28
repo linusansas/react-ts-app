@@ -4,27 +4,31 @@ import { fetchTrendingGifs } from "./fetch-gifs";
 
 function Explorer() {
    const [gifs, setGifs] = useState<IGif[]>([]);
+
    useEffect(() => {
       const gifs = fetchTrendingGifs();
       gifs.then((gifs) => {
          setGifs(gifs);
       });
    }, []);
+
    return (
       <>
-      <h1 className="flex justify-center mb-4 text-4xl">Trending gifs</h1>
-      <div className="flex flex-wrap justify-center">
-   
-
-         {gifs.map((gif) => (
-            <img
-               key={gif.id}
-               src={gif.images.original.url}
-               alt={gif.title}
-               className="m-2 max-w-[200px] aspect-square"
-            />
-         ))}
-      </div>
+         <h1 className="flex justify-center font-thin mb-2 mt-16 md:mt-0 md:ml-0">
+            Trending gifs
+         </h1>
+         <div>
+            <div className="flex flex-wrap justify-center">
+               {gifs.map((gif) => (
+                  <img
+                     key={gif.id}
+                     src={gif.images.original.url}
+                     alt={gif.title}
+                     className="m-2 max-w-[200px] aspect-square"
+                  />
+               ))}
+            </div>
+         </div>
       </>
    );
 }

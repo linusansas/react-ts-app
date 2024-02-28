@@ -1,7 +1,9 @@
-import React from "react";
-
 function Liked() {
-   return <div className="flex justify-center">Liked gifs</div>;
+   return (
+      <h1 className="flex justify-center font-thin mb-2 mt-16 md:mt-0 md:ml-0">
+            No gifs found
+         </h1>
+   );
 }
 
 export default Liked;

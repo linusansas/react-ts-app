@@ -23,8 +23,8 @@ function Search() {
    }, [debouncedSearchTerm]);
 
    return (
-      <div>
-         <div className="m-2 flex gap-2">
+      <>
+         <div className="m-6 mt-20 md:mt-0 flex gap-2 md:flex">
             <input
                onChange={(e) => setSearchTerm(e.target.value)}
                type="text"
@@ -46,7 +46,7 @@ function Search() {
                <p className="font-thin mt-2">No gifs found</p>
             )}
          </div>
-      </div>
+      </>
    );
 }
 
