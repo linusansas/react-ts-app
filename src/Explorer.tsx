@@ -1,19 +1,25 @@
-import { GiphyFetch } from "@giphy/js-fetch-api";
-import { Grid } from "@giphy/react-components";
+import { IGif } from "@giphy/js-types";
+import { useEffect, useState } from "react";
+import { fetchTrendingGifs } from "./fetch-gifs";
 
 function Explorer() {
-   const gf = new GiphyFetch("m1Y2kxBt0RWFGL0w5rd4OMys4IghjbcJ");
-   const fetchGifs = (offset: number) => gf.trending({ offset, limit: 10 });
-
+   const [gifs, setGifs] = useState<IGif[]>([]);
+   useEffect(() => {
+      const gifs = fetchTrendingGifs();
+      gifs.then((gifs) => {
+         setGifs(gifs);
+      });
+   }, []);
    return (
-      <div className="flex justify-center">
-         <Grid
-            width={600}
-            columns={3}
-            borderRadius={10}
-            fetchGifs={fetchGifs}
-            hideAttribution={true}
-         />
+      <div className="flex flex-wrap justify-center">
+         {gifs.map((gif) => (
+            <img
+               key={gif.id}
+               src={gif.images.original.url}
+               alt={gif.title}
+               className="m-2 max-w-[200px] aspect-square"
+            />
+         ))}
       </div>
    );
 }
