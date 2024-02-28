@@ -11,7 +11,11 @@ function Explorer() {
       });
    }, []);
    return (
+      <>
+      <h1 className="flex justify-center mb-4 text-4xl">Trending gifs</h1>
       <div className="flex flex-wrap justify-center">
+   
+
          {gifs.map((gif) => (
             <img
                key={gif.id}
@@ -21,6 +25,7 @@ function Explorer() {
             />
          ))}
       </div>
+      </>
    );
 }
 

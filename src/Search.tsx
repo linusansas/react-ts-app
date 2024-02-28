@@ -1,45 +1,50 @@
 import { IGif } from "@giphy/js-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchSearchedGifs } from "./fetch-gifs";
 
 function Search() {
    const [gifs, setGifs] = useState<IGif[]>([]);
-   const [query, setQuery] = useState("");
+   const [searchTerm, setSearchTerm] = useState("");
+   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
-   function handleOnSearch() {
-      const gifs = fetchSearchedGifs(query);
+   useEffect(() => {
+      const delayDebounceFn = setTimeout(() => {
+         setDebouncedSearchTerm(searchTerm);
+      }, 500);
+
+      return () => clearTimeout(delayDebounceFn);
+   }, [searchTerm]);
+
+   useEffect(() => {
+      const gifs = fetchSearchedGifs(debouncedSearchTerm);
       gifs.then((gifs) => {
          setGifs(gifs);
       });
-   }
+   }, [debouncedSearchTerm]);
 
    return (
       <div>
          <div className="m-2 flex gap-2">
             <input
-               onChange={(e) => setQuery(e.target.value)}
+               onChange={(e) => setSearchTerm(e.target.value)}
                type="text"
                placeholder="Search for gifs"
                className="w-full p-2 border-2 border-gray-300"
             />
-            <button
-               onClick={() => {
-                  handleOnSearch();
-               }}
-               className="bg-blue-500 text-white p-2"
-            >
-               Search
-            </button>
          </div>
          <div className="flex flex-wrap justify-center">
-            {gifs.map((gif) => (
-               <img
-                  key={gif.id}
-                  src={gif.images.original.url}
-                  alt={gif.title}
-                  className="m-2 max-w-[200px] aspect-square"
-               />
-            ))}
+            {gifs.length > 0 ? (
+               gifs.map((gif) => (
+                  <img
+                     key={gif.id}
+                     src={gif.images.original.url}
+                     alt={gif.title}
+                     className="m-2 max-w-[200px] aspect-square"
+                  />
+               ))
+            ) : (
+               <p className="font-thin mt-2">No gifs found</p>
+            )}
          </div>
       </div>
    );
