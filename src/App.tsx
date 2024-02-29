@@ -1,28 +1,15 @@
-import { GifIcon } from "@heroicons/react/16/solid";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { Menu } from "./Menu";
 
 function App() {
    return (
-      <div className="h-full flex flex-col">
-         <header className="to-black">
-            <div className="flex justify-center">
-               <Link to="/explorer">
-                  <GifIcon className="h-20 w-20 p-4 cursor-pointer" />
-               </Link>
-               <Link to="/search">
-                  <MagnifyingGlassIcon className="h-20 w-20 p-4 cursor-pointer" />
-               </Link>
+      <div className="h-full flex">
+         <Menu />
+         <main className="flex-1 overflow-y-auto md:ml-20">
+            <div className="pt-4 max-w-screen-lg mx-auto">
+               <Outlet />
             </div>
-         </header>
-
-         <div className="flex">
-            <main className="p-2 flex-1">
-               <div>
-                  <Outlet />
-               </div>
-            </main>
-         </div>
+         </main>
       </div>
    );
 }

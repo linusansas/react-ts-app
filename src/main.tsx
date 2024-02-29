@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import Explorer from "./Explorer";
+import Liked from "./Liked";
 import Search from "./Search";
 
 const router = createBrowserRouter(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
       <Route path="/" Component={App}>
          <Route index element={<Navigate to="explorer" />} />
          <Route path="explorer" Component={Explorer} />
+         <Route path="liked" Component={Liked} />
          <Route path="search" Component={Search} />
          <Route path="*" element={<span>404</span>} />
       </Route>
