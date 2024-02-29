@@ -24,7 +24,7 @@ function Search() {
 
    return (
       <>
-         <div className="m-6 mt-20 md:mt-0 flex gap-2 md:flex">
+         <div className="m-6 mt-20 md:mt-0 flex md:flex">
             <input
                onChange={(e) => setSearchTerm(e.target.value)}
                type="text"
