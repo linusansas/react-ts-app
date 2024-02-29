@@ -1,6 +1,6 @@
 import { IGif } from "@giphy/js-types";
 import { useEffect, useState } from "react";
-import { fetchSearchedGifs } from "./fetch-gifs";
+import { fetchSearchedGifs } from "../fetch-gifs";
 
 function Search() {
    const [gifs, setGifs] = useState<IGif[]>([]);

@@ -8,9 +8,9 @@ import {
    createRoutesFromElements,
 } from "react-router-dom";
 import App from "./App";
-import Explorer from "./Explorer";
-import Liked from "./Liked";
-import Search from "./Search";
+import Liked from "./pages/Liked";
+import Explorer from "./pages/Explorer";
+import Search from "./pages/Search";
 
 const router = createBrowserRouter(
    createRoutesFromElements(

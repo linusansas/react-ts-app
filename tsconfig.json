@@ -24,7 +24,7 @@
   },
   "include": [
     "src",
-    "src/Explorer.tsx"
+    "src/pages/Explorer.tsx"
   ],
   "references": [
     {

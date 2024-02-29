@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Menu } from "./Menu";
+import { Menu } from "./components/Menu";
+import Footer from "./components/Footer";
 
 function App() {
    return (
@@ -9,6 +10,7 @@ function App() {
             <div className="pt-4 max-w-screen-lg mx-auto">
                <Outlet />
             </div>
+               <Footer />
          </main>
       </div>
    );

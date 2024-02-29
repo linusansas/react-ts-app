@@ -1,6 +1,6 @@
 import { IGif } from "@giphy/js-types";
 import { useEffect, useState } from "react";
-import { fetchTrendingGifs } from "./fetch-gifs";
+import { fetchTrendingGifs } from "../fetch-gifs";
 
 function Explorer() {
    const [gifs, setGifs] = useState<IGif[]>([]);
