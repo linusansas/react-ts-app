@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+# GIF Application README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This README provides guidance on installation, development, and troubleshooting for a GIF application developed with React and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Demo link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://react-ts-app-sigma.vercel.app/explorer
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before starting the project, ensure the following prerequisites are met:
 
-- Configure the top-level `parserOptions` property like this:
+-  Node.js installed on your machine
+-  npm package installed
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Installation
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Follow these steps to get started:
+
+1. **Clone the project:** Use the following command to clone the repository:
+
+   ```
+   git clone https://github.com/linusansas/react-ts-app.git
+   ```
+
+2. **Install dependencies:** Navigate to the cloned directory and install dependencies:
+
+   ```
+   npm install
+   ```
+
+## Development
+
+Once installed, follow these steps for development:
+
+1. **Start the development server:** Run the following command:
+
+   ```
+   npm run dev
+   ```
+
+2. **Modify the code:** You can make modifications in `App.tsx` and `main.tsx`. Components and pages are organized within their respective folders.
+
+## Components in the Code
+
+### React Components
+
+-  **App.tsx**: Layout structure of the application, including navigation and content.
+-  **Routing.tsx**: Sets up routing using React Router for navigation.
+-  **Menu.tsx**: Sidebar menu for navigation.
+-  **Explorer.tsx**: Displays trending GIFs using the Giphy API.
+-  **Liked.tsx**: Displays liked GIFs.
+-  **Search.tsx**: Allows users to search for GIFs.
+
+### Tailwind CSS
+
+Tailwind CSS is used for styling throughout the application.
+
+## Troubleshooting
+
+If you encounter any issues during installation or development, ensure prerequisites are met and refer to React's documentation for solutions.
