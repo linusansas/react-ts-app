@@ -1,9 +1,9 @@
-function Liked() {
+function Exempel3() {
    return (
       <h1 className="flex justify-center font-thin mb-2 mt-16 md:mt-0 md:ml-0">
-            No gifs found
-         </h1>
+         3
+      </h1>
    );
 }
 
-export default Liked;
+export default Exempel3;
